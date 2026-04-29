@@ -1,0 +1,28 @@
+{
+  "id": "modelhunt-selector",
+  "name": "ModelHunt Model Selector",
+  "description": "Queries ModelHunt Agent Card API and executes inference via AI2Apps",
+  "skills": ["skills"],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "provider": {
+        "type": "string",
+        "enum": ["mock", "real"],
+        "default": "real",
+        "description": "Data provider: 'mock' for local testing, 'real' to connect to live APIs"
+      },
+      "modelhuntApiUrl": {
+        "type": "string",
+        "description": "ModelHunt API base URL (required when provider=real)",
+        "default": "https://api.modelhunt.ai2apps.cn"
+      },
+      "aaInferenceUrl": {
+        "type": "string",
+        "description": "AI2Apps AA Inference API base URL (required when provider=real)",
+        "default": "http://127.0.0.1:3015"
+      }
+    }
+  }
+}
