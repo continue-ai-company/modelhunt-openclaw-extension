@@ -1,13 +1,18 @@
 {
   "name": "modelhunt-selector",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ModelHunt model selection plugin for OpenClaw — queries Agent Card API and executes inference via AI2Apps",
+  "main": "index.ts",
   "type": "module",
   "dependencies": {
     "@sinclair/typebox": "0.34.49"
   },
   "devDependencies": {
     "@openclaw/plugin-sdk": "workspace:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/continue-ai-company/modelhunt-openclaw-extension.git"
   },
   "openclaw": {
     "extensions": [
