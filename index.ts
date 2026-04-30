@@ -30,7 +30,8 @@ export default definePluginEntry({
     "estimates cost and latency, then invokes the model via AI2Apps.",
 
   register(api) {
-    const config = (api.config ?? {}) as {
+    const pluginConfig = ((api.config as Record<string, unknown>)?.plugins as Record<string, unknown>)?.entries as Record<string, Record<string, unknown>> | undefined;
+    const config = (pluginConfig?.["modelhunt-selector"]?.config ?? {}) as {
       provider?: string;
       modelhuntApiUrl?: string;
       aaInferenceUrl?: string;
