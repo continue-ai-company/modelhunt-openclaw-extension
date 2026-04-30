@@ -42,10 +42,10 @@ export default definePluginEntry({
     let provider;
     if (providerName === "real") {
       provider = new RealProvider(
-        config.modelhuntApiUrl ?? "http://127.0.0.1:8665",
+        config.modelhuntApiUrl ?? "https://api.modelhunt.ai2apps.cn",
         config.aaInferenceUrl ?? "http://127.0.0.1:3015",
       );
-      api.logger.info(`[modelhunt-selector] registered with provider="real" modelhuntApiUrl=${config.modelhuntApiUrl ?? "http://127.0.0.1:8665"}`);
+      api.logger.info(`[modelhunt-selector] registered with provider="real" modelhuntApiUrl=${config.modelhuntApiUrl ?? "https://api.modelhunt.ai2apps.cn"}`);
     } else {
       provider = new MockProvider();
       api.logger.info(`[modelhunt-selector] registered with provider="mock"`);
